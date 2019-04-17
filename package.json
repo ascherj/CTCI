@@ -1,0 +1,23 @@
+{
+  "name": "CTCI",
+  "version": "1.0.0",
+  "description": "My solutions to the interview questions in Cracking The Coding Interview.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ascherj/CTCI.git"
+  },
+  "keywords": [],
+  "author": "Jake Ascher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ascherj/CTCI/issues"
+  },
+  "homepage": "https://github.com/ascherj/CTCI#readme",
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
