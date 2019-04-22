@@ -1,5 +1,6 @@
 const { isUnique } = require('./1.1');
 const { isPermutationOf } = require('./1.2');
+const { replaceSpaces } = require('./1.3');
 
 describe('isUnique', () => {
   test('should return false for a word with repeated chars', () => {
@@ -26,5 +27,15 @@ describe('isPermutationOf', () => {
 
   test('should return true for two empty strings', () => {
     expect(isPermutationOf('', '')).toBe(true);
+  });
+});
+
+describe('replaceSpaces', () => {
+  test('should replace the spaces of a string with \'%20\'', () => {
+    expect(replaceSpaces('Mr John Smith   ')).toBe('Mr%20John%20Smith');
+  });
+
+  test('should not replace the spaces in a string that only contains spaces', () => {
+    expect(replaceSpaces('    ')).toBe('');
   });
 });
