@@ -2,6 +2,7 @@ const { isUnique } = require('./1.1');
 const { isPermutationOf } = require('./1.2');
 const { replaceSpaces } = require('./1.3');
 const { isPermutationOfPalindrome } = require('./1.4');
+const { oneAway } = require('./1.5');
 
 describe('1.1 - isUnique', () => {
   test('should return false for a word with repeated chars', () => {
@@ -56,5 +57,27 @@ describe('1.4 - isPermutationOfPalindrome', () => {
 
   test('should ignore case', () => {
     expect(isPermutationOfPalindrome('Tact Coa')).toBe(true);
+  });
+});
+
+describe('1.5 - oneAway', () => {
+  test('should return true for a char that is removed', () => {
+    expect(oneAway('pale', 'ple')).toBe(true);
+  });
+
+  test('should return true for a char that is added', () => {
+    expect(oneAway('pales', 'pale')).toBe(true);
+  });
+
+  test('should return true for a char that is replaced', () => {
+    expect(oneAway('pale', 'bale')).toBe(true);
+  });
+
+  test('should return false for two strings that differ by two chars', () => {
+    expect(oneAway('pale', 'bake')).toBe(false);
+  });
+
+  test('should return false for strings whose lengths differ by more than 1', () => {
+    expect(oneAway('the', 'themes')).toBe(false);
   });
 });
