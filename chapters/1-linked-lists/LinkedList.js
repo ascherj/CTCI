@@ -46,4 +46,21 @@ LinkedList.prototype.size = function() {
   return count;
 };
 
+LinkedList.prototype.deleteNode = function(value) {
+  let currentNode = this.head;
+  if (currentNode === null) return;
+  if (currentNode.value === value) {
+    this.head = this.head.next;
+  }
+  while (currentNode && currentNode.next) {
+    if (currentNode.next.value === value) {
+      if (currentNode.next === this.tail) {
+        this.tail = currentNode;
+      }
+      currentNode.next = currentNode.next.next;
+    }
+    currentNode = currentNode.next;
+  }
+};
+
 module.exports = LinkedList;

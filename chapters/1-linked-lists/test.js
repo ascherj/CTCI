@@ -68,3 +68,32 @@ describe('LinkedList - size', () => {
     expect(list.size()).toBe(3);
   });
 });
+
+describe('LinkedList - deleteNode', () => {
+  test('should delete a node from the linked list', () => {
+    const list = new LinkedList();
+    list.addToTail(1);
+    list.addToTail(2);
+    list.addToTail(3);
+    list.deleteNode(2);
+    expect(list.size()).toBe(2);
+  });
+
+  test('should update the head if the head was removed', () => {
+    const list = new LinkedList();
+    list.addToTail(1);
+    list.addToTail(2);
+    list.addToTail(3);
+    list.deleteNode(1);
+    expect(list.head.value).toBe(2);
+  });
+
+  test('should update the tail if the tail was removed', () => {
+    const list = new LinkedList();
+    list.addToTail(1);
+    list.addToTail(2);
+    list.addToTail(3);
+    list.deleteNode(3);
+    expect(list.tail.value).toBe(2);
+  });
+});
