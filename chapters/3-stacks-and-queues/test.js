@@ -52,4 +52,18 @@ describe('Stack', () => {
     stack.push(1);
     expect(stack.isEmpty()).toBe(false);
   });
+
+  test('size() should return zero for an empty stack', () => {
+    const stack = new Stack();
+    expect(stack.size()).toBe(0);
+  });
+
+  test('size() should return the size of a non-empty stack', () => {
+    const stack = new Stack();
+    stack.push('one');
+    stack.push('two');
+    stack.pop();
+    stack.push('three');
+    expect(stack.size()).toBe(2);
+  });
 });
