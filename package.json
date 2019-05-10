@@ -17,7 +17,11 @@
     "url": "https://github.com/ascherj/CTCI/issues"
   },
   "homepage": "https://github.com/ascherj/CTCI#readme",
-  "dependencies": {
-    "jest": "^24.7.1"
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.2.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.0"
   }
 }
