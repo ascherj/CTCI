@@ -29,10 +29,10 @@ describe('BST - contains', () => {
     expect(bst.contains(5)).toBe(true);
   });
 
-  // test('should return false for values that do not exist in the BST', () => {
-  //   const bst = new BST(3);
-  //   bst.insert(2);
-  //   bst.insert(5);
-  //   expect(bst.contains(8)).toBe(false);
-  // });
+  test('should return false for values that do not exist in the BST', () => {
+    const bst = new BST(3);
+    bst.insert(2);
+    bst.insert(5);
+    expect(bst.contains(8)).toBe(false);
+  });
 });
