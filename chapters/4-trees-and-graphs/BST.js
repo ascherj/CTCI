@@ -39,4 +39,22 @@ BST.prototype.contains = function(value) {
   else return this.right ? this.right.contains(value) : false;
 };
 
+BST.prototype.preOrderLog = function(cb) {
+  if (this.value) cb(this.value);
+  if (this.left) this.left.preOrderLog(cb);
+  if (this.right) this.right.preOrderLog(cb);
+};
+
+BST.prototype.inOrderLog = function(cb) {
+  if (this.left) this.left.inOrderLog(cb);
+  if (this.value) cb(this.value);
+  if (this.right) this.right.inOrderLog(cb);
+};
+
+BST.prototype.postOrderLog = function(cb) {
+  if (this.left) this.left.postOrderLog(cb);
+  if (this.right) this.right.postOrderLog(cb);
+  if (this.value) cb(this.value);
+};
+
 module.exports = BST;

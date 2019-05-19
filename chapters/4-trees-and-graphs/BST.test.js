@@ -36,3 +36,51 @@ describe('BST - contains', () => {
     expect(bst.contains(8)).toBe(false);
   });
 });
+
+describe('BST - preOrderLog', () => {
+  test('should visit all nodes using pre-order traversal', () => {
+    const bst = new BST(7);
+    bst.insert(4);
+    bst.insert(1);
+    bst.insert(6);
+    bst.insert(5);
+    bst.insert(10);
+    const result = [];
+    bst.preOrderLog((val) => {
+      result.push(val);
+    });
+    expect(result).toEqual([7, 4, 1, 6, 5, 10]);
+  });
+});
+
+describe('BST - inOrderLog', () => {
+  test('should visit all nodes using in-order traversal', () => {
+    const bst = new BST(7);
+    bst.insert(4);
+    bst.insert(1);
+    bst.insert(6);
+    bst.insert(5);
+    bst.insert(10);
+    const result = [];
+    bst.inOrderLog((val) => {
+      result.push(val);
+    });
+    expect(result).toEqual([1, 4, 5, 6, 7, 10]);
+  });
+});
+
+describe('BST - postOrderLog', () => {
+  test('should visit all nodes using post-order traversal', () => {
+    const bst = new BST(7);
+    bst.insert(4);
+    bst.insert(1);
+    bst.insert(6);
+    bst.insert(5);
+    bst.insert(10);
+    const result = [];
+    bst.postOrderLog((val) => {
+      result.push(val);
+    });
+    expect(result).toEqual([1, 5, 6, 4, 10, 7]);
+  });
+});
